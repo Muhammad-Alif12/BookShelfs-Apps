@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bookshelf Apps</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+  <link rel="stylesheet" href="asset/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="jumbrotron">
+          <h1>Bookshelf</h1>
+          <p>Tempat menyimpan data buku anda secara akurat dan terpecaya.</p>
+        </div>
+      <nav>
+        <ul>
+           <li><a href="#inputbuku">InputBuku</a></li>
+           <li><a href="#incomplete">BelumSelesai</a></li>
+           <li><a href="#complete">Selesai</a></li>
+        </ul>
+      </nav>
+    </header>
+<main id="inputbuku">
+  <section class="input_section" >
+    <h2>Masukkan Buku Baru</h2>
+    <form id="inputBook" name="inputBook">
+      <div class="input">
+        <label for="inputBookTitle">Judul</label>
+        <input id="inputBookTitle" type="text" required>
+      </div>
+      <div class="input">
+        <label for="inputBookAuthor">Penulis</label>
+        <input id="inputBookAuthor" type="text" required>
+      </div>
+      <div class="input">
+        <label for="inputBookYear">Tahun</label>
+        <input id="inputBookYear" type="number" required>
+      </div>
+      <div class="input_inline">
+        <label for="inputBookIsComplete">Selesai dibaca</label>
+        <input id="inputBookIsComplete" type="checkbox" onclick="checkboxComplete()">
+      </div>
+      <button id="bookSubmit" type="submit">MASUKAN BUKU KEDALAM RAK YANG BELUM SELESAI DIBACA</button>
+     
+    </form>
+  </section>
+    
+  <section class="search_section">
+    <button id="searchSubmit" type="submit" onclick="cariBuku()">CARI BUKU</button>
+    <button id="refresh" type="submit" onclick="refreshBuku()">REFRESH BUKU</button>
+  </section>
+  
+  <section class="book_shelf" id="incomplete">
+    <h2>Belum Selesai Dibaca</h2>
+    <div id="incompleteBookshelfList" class="book_list"></div>
+  </section>
+  
+  <section class="book_shelf" id="complete">
+    <h2>Selesai Dibaca</h2>
+    <div id="completeBookshelfList" class="book_list"></div>
+  </section>
+</main>
+
+<footer><p>Developer By Muh alif karya mula</p></footer>
+
+<script src="asset/js/main.js"></script>
+<script src="asset/js/script.js"></script>
+<script src="asset/js/storage.js"></script>
+</body>
+</html>
